@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Victory Overlay -->
+    <div id="victoryOverlay" class="victory-overlay">
+        <div class="trophy rotateIn">
+            <div class="trophy-cup"></div>
+            <div class="trophy-base"></div>
+            <div class="trophy-stand"></div>
+            <div class="trophy-handles"></div>
+        </div>
+        <div id="victoryMessage" class="victory-message">مبروك!</div>
+        <div id="victoryStats" class="victory-stats"></div>
+        <div class="victory-buttons">
+            <button id="playAgainBtn" class="btn-primary">العب مرة أخرى</button>
+            <button id="newGameBtn2" class="btn-secondary">لعبة جديدة</button>
+        </div>
+    </div>
+    
+    <!-- Setup Screen -->
+    <div id="setupScreen" class="setup-screen">
+        <h1 class="title" style="text-align: center; margin-bottom: 40px;">memory</h1>
+        
+        <div class="option-group">
+            <h2 class="setup-title">Select Theme</h2>
+            <div class="options">
+                <div class="option-btn selected" data-theme="numbers">Numbers</div>
+                <div class="option-btn" data-theme="icons">Icons</div>
+                <div class="option-btn" data-theme="colors">Colors</div>
+            </div>
+        </div>
+        
+        <div class="option-group">
+            <h2 class="setup-title">Number of Players</h2>
+            <div class="options">
+                <div class="option-btn" data-players="1">1</div>
+                <div class="option-btn" data-players="2">2</div>
+                <div class="option-btn" data-players="3">3</div>
+                <div class="option-btn selected" data-players="4">4</div>
+            </div>
+        </div>
+        
+        <div class="option-group">
+            <h2 class="setup-title">Grid Size</h2>
+            <div class="options">
+                <div class="option-btn selected" data-grid="4">4x4</div>
+                <div class="option-btn" data-grid="6">6x6</div>
+                <div class="option-btn" data-grid="8">8x8</div>
+            </div>
+        </div>
+        
+        <button id="startGameBtn" class="btn-primary start-btn">Start Game</button>
+    </div>
+    
+    <!-- Game Screen (initially hidden) -->
+    <div id="gameScreen" class="hidden">
+        <header>
+            <h1 class="title">memory</h1>
+            <div class="game-controls">
+                <button id="restartBtn" class="btn-primary">Restart</button>
+                <button id="newGameBtn" class="btn-secondary">New Game</button>
+            </div>
+        </header>
+        
+        <div class="game-info">
+            <div class="info-item">Moves: <span id="moveCounter">0</span></div>
+            <div class="info-item">Time: <span id="timer">00:00</span></div>
+        </div>
+        
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+        
+        <div id="gameBoard" class="game-board"></div>
+        
+        <div id="playersContainer" class="players-container">
+            <!-- Players will be added dynamically -->
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
